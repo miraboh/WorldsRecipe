@@ -1,0 +1,35 @@
+<resources>
+        <!-- To see how these attributes are used, please visit https://material.io/develop/android/theming/color/ -->
+        <style name="Base.Theme.Food"
+            parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+
+            <item name="colorPrimary">@color/primaryColor</item>
+            <item name="colorOnPrimary">@color/yellow_500</item>
+            <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+            <item name="colorOnSurface">@color/black</item>
+            <item name="colorAccent">@color/primaryDarkColor</item>
+            <item name="colorSurface">@color/gray_50</item>
+            <item name="colorSecondary">@color/yellow_500</item>
+            <item name="android:colorBackground">@color/primaryColor</item>
+        </style>
+
+        <style
+            name="Theme.Food"
+            parent="Base.Theme.Food"/>
+
+        <style name="Theme.Food.NoActionBar">
+            <item name="windowActionBar">false</item>
+            <item name="windowNoTitle">true</item>
+        </style>
+
+        <style
+            name="Theme.Food.AppBarOverlay"
+            parent="ThemeOverlay.MaterialComponents.Dark.ActionBar"/>
+
+        <style
+            name="TextAppearance.Sunflower.Toolbar.Text"
+            parent="TextAppearance.MaterialComponents.Headline5" >
+            <item name="android:textColor">?attr/colorOnSurface</item>
+        </style>
+
+</resources>
