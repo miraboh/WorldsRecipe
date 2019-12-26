@@ -1,87 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <com.myrabohuche.worldsrecipe.MaskedCardView
-        android:layout_width="match_parent"
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.myrabohuche.worldsrecipe.Food" />
+
+    </data>
+
+    <LinearLayout
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/card_side_margin"
-        android:layout_marginEnd="@dimen/card_side_margin"
-        android:layout_marginBottom="@dimen/card_bottom_margin"
-        app:cardElevation="@dimen/card_elevation"
-        app:cardPreventCornerOverlap="false"
-        app:shapeAppearanceOverlay="@style/ShapeAppearance.Food.Card">
+        android:layout_width="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.myrabohuche.worldsrecipe.MaskedCardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_side_margin"
+            android:layout_marginEnd="@dimen/card_side_margin"
+            android:layout_marginBottom="@dimen/card_bottom_margin"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardPreventCornerOverlap="false"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Food.Card">
 
-            <ImageView
-                android:id="@+id/img_pics"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/food_item_image_height"
-                android:scaleType="centerCrop"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/text_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_extra_small"
-                android:gravity="center_horizontal"
-                android:textAppearance="?attr/textAppearanceListItem"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/img_pics"
-                tools:text="Egusi" />
+                <ImageView
+                    android:id="@+id/img_pics"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/food_item_image_height"
+                    android:scaleType="centerCrop"
+                    app:imageUrl="@{viewmodel.pics}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-<!--            <TextView-->
-<!--                android:id="@+id/text_origin"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="@dimen/margin_extra_small"-->
-<!--                android:gravity="center_horizontal"-->
-<!--                android:textAppearance="?attr/textAppearanceListItem"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/text_name"-->
-<!--                tools:text="Tomato" />-->
+                <TextView
+                    android:id="@+id/text_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_extra_small"
+                    android:gravity="center_horizontal"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img_pics"
+                    tools:text="Egusi"
+                    android:text="@{viewmodel.name}"/>
 
-<!--            <TextView-->
-<!--                android:id="@+id/text_ingredients"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="@dimen/margin_extra_small"-->
-<!--                android:gravity="center_horizontal"-->
-<!--                android:textAppearance="?attr/textAppearanceListItem"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/text_origin"-->
-<!--                tools:text="Maggi, Salt, Pepper" />-->
-<!--            <TextView-->
-<!--                android:id="@+id/text_preparation"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginBottom="@dimen/margin_normal"-->
-<!--                android:layout_marginTop="@dimen/margin_extra_small"-->
-<!--                android:textAppearance="?attr/textAppearanceListItem"-->
-<!--                android:gravity="center_horizontal"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/text_ingredients"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                tools:text="First of All Add Maggi, Salt, Pepper"/>-->
+                <!--            <TextView-->
+                <!--                android:id="@+id/text_origin"-->
+                <!--                android:layout_width="0dp"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_marginTop="@dimen/margin_extra_small"-->
+                <!--                android:gravity="center_horizontal"-->
+                <!--                android:textAppearance="?attr/textAppearanceListItem"-->
+                <!--                app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                app:layout_constraintStart_toStartOf="parent"-->
+                <!--                app:layout_constraintTop_toBottomOf="@id/text_name"-->
+                <!--                tools:text="Tomato" />-->
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <!--            <TextView-->
+                <!--                android:id="@+id/text_ingredients"-->
+                <!--                android:layout_width="0dp"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_marginTop="@dimen/margin_extra_small"-->
+                <!--                android:gravity="center_horizontal"-->
+                <!--                android:textAppearance="?attr/textAppearanceListItem"-->
+                <!--                app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                app:layout_constraintStart_toStartOf="parent"-->
+                <!--                app:layout_constraintTop_toBottomOf="@id/text_origin"-->
+                <!--                tools:text="Maggi, Salt, Pepper" />-->
+                <!--            <TextView-->
+                <!--                android:id="@+id/text_preparation"-->
+                <!--                android:layout_width="0dp"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_marginBottom="@dimen/margin_normal"-->
+                <!--                android:layout_marginTop="@dimen/margin_extra_small"-->
+                <!--                android:textAppearance="?attr/textAppearanceListItem"-->
+                <!--                android:gravity="center_horizontal"-->
+                <!--                app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                app:layout_constraintStart_toStartOf="parent"-->
+                <!--                app:layout_constraintTop_toBottomOf="@id/text_ingredients"-->
+                <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                tools:text="First of All Add Maggi, Salt, Pepper"/>-->
 
-    </com.myrabohuche.worldsrecipe.MaskedCardView>
-</LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.myrabohuche.worldsrecipe.MaskedCardView>
+    </LinearLayout>
+</layout>
 
 <!--<androidx.cardview.widget.CardView-->
 <!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
